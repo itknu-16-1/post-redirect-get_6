@@ -13,5 +13,7 @@
 			<li><c:out value="${item}" /></li>
 		</c:forEach>
 	</ul>
+	
+	<a href="/redirect/">Go back</a>
 </body>
 </html>
