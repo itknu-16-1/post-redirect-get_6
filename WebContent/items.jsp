@@ -8,8 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%@ page import="redirect.ItemRepository" %>
 	<ul>
-		<c:forEach items="${list}" var="item">
+		<c:forEach items="${ItemRepository.getAll()}" var="item">
 			<li><c:out value="${item}" /></li>
 		</c:forEach>
 	</ul>

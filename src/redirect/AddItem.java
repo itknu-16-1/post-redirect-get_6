@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class S
  */
-@WebServlet("/S")
-public class S extends HttpServlet {
+@WebServlet("/addItem")
+public class AddItem extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -25,8 +25,11 @@ public class S extends HttpServlet {
 				
 		// add list to args and redirect to JSP
 		request.setAttribute("list", ItemRepository.getAll());
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/t.jsp");
-		dispatcher.forward(request, response); 
+		
+//		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/items.jsp");
+//		dispatcher.forward(request, response); 
+		
+		response.sendRedirect(request.getContextPath() + "/items.jsp");
 	}
 
 }
